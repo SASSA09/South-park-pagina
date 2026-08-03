@@ -1,0 +1,62 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes - South Park</title>
+
+    <!-- ESTILOS DIRECTOS (Esto ignora si el style.css falla) -->
+    <style>
+        .contenedor-cards {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 20px !important;
+            padding: 20px !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+        }
+
+        .card {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 250px !important;
+            background-color: #ffffff !important;
+            border-radius: 12px !important;
+            border: 1px solid #e2e8f0 !important;
+            text-decoration: none !important;
+            color: #333333 !important;
+            overflow: hidden !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08) !important;
+            padding: 15px !important;
+            transition: transform 0.2s ease !important;
+        }
+
+        .card:hover {
+            transform: translateY(-5px) !important;
+        }
+
+        .card img {
+            width: 100% !important;
+            height: 180px !important;
+            object-fit: contain !important;
+            margin-bottom: 10px !important;
+        }
+
+        .card h3 {
+            font-size: 1.2rem !important;
+            color: #0d1b2a !important;
+            margin: 10px 0 5px 0 !important;
+            text-align: center !important;
+            text-decoration: none !important;
+        }
+
+        .card p {
+            font-size: 0.85rem !important;
+            color: #64748b !important;
+            line-height: 1.3 !important;
+            text-align: center !important;
+            margin: 0 !important;
+            text-decoration: none !important;
+        }
+    </style>
+</head>
