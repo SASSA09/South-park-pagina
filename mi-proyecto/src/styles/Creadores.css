@@ -1,0 +1,60 @@
+.seccion-creadores {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.seccion-creadores h2 {
+  font-size: 3rem !important;
+  color: #0d1b2a;
+  margin-bottom: 3rem;
+}
+
+.contenedor-cards-creadores {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.card-creador {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 320px !important;
+  background-color: #ffffff !important;
+  border-radius: 12px !important;
+  border: 1px solid #e2e8f0 !important;
+  padding: 1.5rem !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-creador:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-creador img {
+  width: 100% !important;
+  height: 300px !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  border-radius: 8px !important;
+  padding: 0 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.card-creador h3 {
+  font-size: 2rem;
+  color: #0d1b2a;
+  margin-bottom: 1rem;
+}
+
+.card-creador p {
+  font-size: 1.2rem;
+  color: #4a5568;
+  line-height: 1.6;
+  text-align: center;
+}

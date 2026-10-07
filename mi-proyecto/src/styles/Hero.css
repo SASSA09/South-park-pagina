@@ -1,0 +1,550 @@
+/* ==========================================================================
+   1. RESET Y ESTILOS GENERALES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: rgb(253, 253, 253)
+}
+/* ==========================================================================
+   2. ENCABEZADO Y NAVEGACIÓN
+   ========================================================================== */
+/* BARRA VERDE MÁS FINITA */
+/* BARRA VERDE MAS FINITA */
+.header {
+    display: flex; /* Te agrego display flex por si te faltaba */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5%; /* Si quieres que sea más finita, probá con 0.5rem */
+    background-color: #014c2a;
+    color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+} /* <-- ESTA LLAVE FALTABA ACÁ */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+nav a {
+    color: #ffffff;             /* Color del texto */
+    text-decoration: none;      /* Quita el subrayado */
+    font-weight: 600;
+    margin-left: 1.5rem;        /* Separación entre los botones del menú */
+    transition: color 0.2s ease;
+}
+nav a:hover {
+    color: #000000;             /* Cambia de color cuando pasas el mouse por encima */
+}
+/* ==========================================================================
+   3. SECCIÓN HERO (INICIO)
+   ========================================================================== */
+/* Estilo para los botones tipo enlace */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 1rem;
+    /* --- CAMBIOS PARA LA IMAGEN DE FONDO --- */
+    background-image: url('https://wallpapers.com/images/featured/south-park-lv4yf9kgk3jgf681.jpg'); /* 1. Ruta a tu imagen */
+    background-size: cover;                        /* 2. Escala la imagen para cubrir todo el ancho y alto */
+    background-position: center;                   /* 3. Centra la imagen */
+    background-repeat: no-repeat;                  /* 4. No repite la imagen si es pequeña */
+    /* -------------------------------------- */
+    color: #fffdfd;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Capa negra al 60% de opacidad */
+        url('https://wallpapers.com/images/featured/south-park-lv4yf9kgk3jgf681.jpg'); /* TU IMAGEN ORIGINAL */
+}
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    color: #acb6c9;
+}
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background-color: #38bdf8;
+    color: #e5e7ed;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+.btn:hover {
+    background-color: #7dd3fc;
+    /* Estilos para que el botón vuelva a aparecer e ir al link */
+}
+/* ==========================================================================
+   4. SECCIÓN TARJETAS / SERVICIOS
+   ========================================================================== */
+.servicios {
+    padding: 4rem 5%;
+    text-align: center;
+}
+.servicios h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #0f172a;
+}
+.cards-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 2rem;
+    flex: 1 1 250px;
+    max-width: 350px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card h3 {
+    margin-bottom: 0.8rem;
+    color: #1e293b;
+}
+/* ==========================================================================
+   5. PIE DE PÁGINA
+   ========================================================================== */
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #014c2a;
+    color: #b8b9bb;
+    font-size: 0.9rem;
+}
+/* ==========================================================================
+   6. ADAPTACIÓN A CELULARES (RESPONSIVE - DÍA 3)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nav a {
+        margin: 0 0.5rem;
+    }
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}/* ==========================================================================
+   ESTILOS PARA LAS TARJETAS E IMÁGENES DE SOUTH PARK
+   ========================================================================== */
+/* 1. El contenedor donde están las dos tarjetas */
+.cards-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch; /* Estira las tarjetas para que midan lo mismo */
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+/* 2. La tarjeta blanca */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden; /* Corta la imagen si sobresale de los bordes redondeados */
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px;
+    max-width: 350px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+}
+/* 3. El texto dentro de la tarjeta */
+.card h3, .card p {
+    padding: 0 1.5rem;
+}
+.card h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.card p {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: #475569;
+}
+/* 4. LA IMAGEN: Acá se acomodan los tamaños */
+.card img {
+    width: 100%;             /* Ocupa todo el ancho */
+    height: 320px;           /* ALTURA FIJA IGUAL PARA TODAS */
+    object-fit: cover;       /* RECORTA SIN DEFORMAR */
+    object-position: top;    /* Enfoca la cabeza/cara de la foto */
+}
+    /* Estilos para que el botón vuelva a aparecer e ir al link */
+.btn-saber-mas {
+    display: inline-block !important; /* Asegura que el botón se muestre */
+    padding: 12px 28px;
+    background-color: #e5484d;        /* Color rojo de South Park */
+    color: #ffffff !important;        /* Texto en blanco */
+    text-decoration: none !important; /* Saca el subrayado */
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+/* --- AJUSTE PERFECTO DE IMAGEN PARA CREADORES --- */
+.btn-saber-mas:hover {
+    background-color: #c9373c;        /* Rojo más oscuro al pasar el mouse */
+}
+/* --- SECCIÓN PERSONAJES Y CARDS --- */
+.seccion-personajes {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+.seccion-personajes h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #0d1b2a;
+}
+/* Grilla para las tarjetas */
+.contenedor-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Para que bajen si la pantalla es chica */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Formato de cada Tarjeta (Enlace) */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    width: 280px;
+    padding: 1.5rem;
+    text-decoration: none; /* Saca el subrayado del link */
+    color: inherit;         /* Mantiene los colores de texto originales */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* Efecto al pasar el mouse por la tarjeta */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+/* --- ESTILOS PARA ARREGLAR LAS CARDS DE PERSONAJES --- */
+/* Contenedor principal para que las tarjetas se alineen en filas */
+.contenedor-cards {
+    display: flex;
+    flex-wrap: wrap;       /* Importante: para que bajen en pantallas chicas */
+    justify-content: center; /* Centra las tarjetas */
+    gap: 2rem;            /* Espacio entre tarjetas */
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;       /* Centra el contenedor completo */
+}
+/* El enlace de la tarjeta (el <a> completo) */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centra todo horizontalmente */
+    width: 250px;           /* Ancho fijo para cada tarjeta */
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    text-decoration: none;  /* ¡Crucial! Saca el subrayado azul */
+    color: inherit;         /* Mantiene el color del texto original */
+    overflow: hidden;       /* Para que la imagen no se escape de las esquinas redondeadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding-bottom: 1.5rem; /* Espacio abajo de la descripción */
+}
+/* Efecto al pasar el mouse por la tarjeta */
+.card:hover {
+    transform: translateY(-5px); /* Se levanta un poquito */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+/* --- SECCIÓN PERSONAJES Y CARDS --- */
+.seccion-personajes {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+.seccion-personajes h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #0d1b2a;
+}
+/* Grilla para las tarjetas */
+.contenedor-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* Para que bajen si la pantalla es chica */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Formato de cada Tarjeta (Enlace) */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    width: 280px;
+    padding: 1.5rem;
+    text-decoration: none; /* Saca el subrayado del link */
+    color: inherit;         /* Mantiene los colores de texto originales */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* Efecto al pasar el mouse por la tarjeta */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+/* Estilo para las imágenes dentro de la tarjeta */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+    margin-bottom: 1rem;
+}
+.card h3 {
+    font-size: 1.3rem;
+    color: #0d1b2a;
+    margin-bottom: 0.5rem;
+}
+.card p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.4;
+}
+/* --- ESTILOS PARA ARREGLAR LAS CARDS DE PERSONAJES --- */
+/* Contenedor principal para que las tarjetas se alineen en filas */
+.contenedor-cards {
+    display: flex;
+    flex-wrap: wrap;       /* Importante: para que bajen en pantallas chicas */
+    justify-content: center; /* Centra las tarjetas */
+    gap: 2rem;            /* Espacio entre tarjetas */
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;       /* Centra el contenedor completo */
+}
+/* El enlace de la tarjeta (el <a> completo) */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centra todo horizontalmente */
+    width: 250px;           /* Ancho fijo para cada tarjeta */
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    text-decoration: none;  /* ¡Crucial! Saca el subrayado azul */
+    color: inherit;         /* Mantiene el color del texto original */
+    overflow: hidden;       /* Para que la imagen no se escape de las esquinas redondeadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding-bottom: 1.5rem; /* Espacio abajo de la descripción */
+}
+/* Efecto al pasar el mouse por la tarjeta */
+.card:hover {
+    transform: translateY(-5px); /* Se levanta un poquito */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+/* --- ESTILO PARA ARREGLAR LA IMAGEN GIGANTE --- */
+.card img {
+    width: 100%;           /* Ocupa todo el ancho de la tarjeta */
+    height: 200px;          /* Altura fija para que todas queden iguales */
+    object-fit: contain;    /* Ajusta la imagen sin deformarla (muestra todo el personaje) */
+    background-color: #f7fafc; /* Fondo gris muy suave para la imagen */
+    padding: 1rem;          /* Espacio para que el personaje no toque los bordes */
+}
+/* El nombre del personaje */
+.card h3 {
+    font-size: 1.3rem;
+    color: #0d1b2a;         /* Color oscuro */
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+/* La descripción */
+.card p {
+    font-size: 0.9rem;
+    color: #64748b;         /* Gris para la descripción */
+    line-height: 1.4;
+    text-align: center;
+    padding: 0 1rem;        /* Margen interno a los lados */
+}
+/* Centra el título de la sección */
+.seccion-personajes h2, #personajes h2 {
+    text-align: center !important;
+    width: 100%;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #0d1b2a;
+    font-size: 2rem;
+}
+/* --- ESTILOS PARA AGRANDAR LA SECCIÓN DE CREADORES --- */
+.seccion-creadores {
+    padding: 4rem 1rem; /* Más espacio arriba y abajo */
+    text-align: center;
+}
+/* 1. AGRANDAR EL TÍTULO PRINCIPAL */
+.seccion-creadores h2 {
+    font-size: 3rem !important; /* Título mucho más grande */
+    color: #0d1b2a;
+    margin-bottom: 3rem;
+}
+/* 2. AGRANDAR EL CONTENEDOR Y SUS ESPACIOS */
+.contenedor-cards-creadores {
+    display: flex;
+    justify-content: center;
+    gap: 4rem; /* Más espacio entre las dos tarjetas */
+    flex-wrap: wrap;
+    max-width: 1400px; /* Contenedor más ancho */
+    margin: 0 auto;
+}
+/* 3. AGRANDAR LA TARJETA COMPLETA */
+
+.card-creador {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px; /* Bordes más redondeados */
+    width: 400px; /* Tarjeta más ancha */
+    padding: 2.5rem; /* Más espacio interno */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-creador:hover {
+    transform: translateY(-8px); /* Se levanta un poco más al pasar el mouse */
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+/* 4. AGRANDAR LA IMAGEN */
+.card-creador img {
+    width: 100%; /* Ocupa todo el ancho de la tarjeta */
+    height: 350px; /* Imagen mucho más alta */
+    object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
+    border-radius: 8px; /* Bordes redondeados en la imagen */
+    margin-bottom: 2rem;
+}
+/* 5. AGRANDAR EL NOMBRE DEL CREADOR */
+.card-creador h3 {
+    font-size: 2rem; /* Nombre más grande */
+    color: #0d1b2a;
+    margin-bottom: 1rem;
+}
+/* 6. AGRANDAR LA DESCRIPCIÓN */
+.card-creador p {
+    font-size: 1.2rem; /* Texto de descripción más grande */
+    color: #4a5568;
+    line-height: 1.6; /* Mejor espaciado entre líneas para leer */
+    text-align: center;
+}
+/* --- AJUSTE PERFECTO DE IMAGEN PARA CREADORES --- */
+/* --- ESTILO EXCLUSIVO PARA LAS FOTOS DE LOS CREADORES --- */
+.card-creador img {
+    width: 100% !important;
+    height: 300px !important;            /* Ajusta la altura de la foto */
+    object-fit: cover !important;        /* Llena la tarjeta recortando prolijamente */
+    object-position: top center !important;/* Centra en la cara de los creadores */
+    border-radius: 8px !important;       /* Bordes redondeados */
+    padding: 0 !important;               /* Sin márgenes internos */
+    margin-bottom: 1.5rem !important;
+}
+/* --- ESTILO PARA LAS CARDS DE LOS CREADORES (por si quieres darles más tamaño) --- */
+.card-creador {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 320px !important;             /* Tarjetas más anchas para los creadores */
+    background-color: #ffffff !important;
+    border-radius: 12px !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08) !important;
+}
+.logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;           
+    text-decoration: none !important;
+    color: #ffffff !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+}
+.logo-favi {
+    width: 40px !important;          /* Ajusta el tamaño de la carita */
+    height: 40px !important;
+    border-radius: 50% !important;   /* Hace que la imagen sea circular */
+}
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  background-color: #1a252c;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #f0f0f0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.btn-saber-mas {
+  display: inline-block;
+  padding: 12px 26px;
+  background-color: #ffcc00;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-saber-mas:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+}
