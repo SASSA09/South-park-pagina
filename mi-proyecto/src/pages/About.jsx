@@ -1,61 +1,69 @@
-import '../styles/Hero.css';
-import '../styles/Home.css';
-import '../styles/Creadores.css';
-import '../styles/Card.css';
+import '../styles/About.css';
 
+/**
+ * Página About / Creadores
+ * Presenta a Trey Parker y Matt Stone con sus imágenes locales y enlaces a sus biografías.
+ */
 export const About = () => {
+  const creadores = [
+    {
+      id: 1,
+      nombre: 'Trey Parker',
+      rol: 'Co-creador, Director, Guionista y Actor de Voz',
+      imagen: '/trey.jpg',
+      descripcion:
+        'Randolph Severn "Trey" Parker III es un animador, director, guionista y actor estadounidense. Da voz a Stan Marsh, Eric Cartman, Randy Marsh y al Sr. Garrison. Ha ganado múltiples premios Emmy y un premio Tony.',
+      wikiUrl: 'https://es.wikipedia.org/wiki/Trey_Parker'
+    },
+    {
+      id: 2,
+      nombre: 'Matt Stone',
+      rol: 'Co-creador, Productor, Guionista y Actor de Voz',
+      imagen: '/matt.jpg',
+      descripcion:
+        'Matthew Richard "Matt" Stone es un animador, guionista, productor y músico estadounidense. Presta su voz a Kyle Broflovski, Kenny McCormick y Butters Stotch, además de co-crear el aclamado musical The Book of Mormon.',
+      wikiUrl: 'https://es.wikipedia.org/wiki/Matt_Stone'
+    }
+  ];
+
   return (
-    <div>
-      {/* SECCIÓN HERO */}
-      <section id="inicio" className="hero">
-        <h1>South Park</h1>
-        <p>Descubre todo sobre los personajes y capítulos de South Park.</p>
-        <a 
-          href="https://es.wikipedia.org/wiki/South_Park" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="btn-saber-mas"
-        >
-          Saber más
-        </a>
-      </section>
+    <div className="about-page">
+      <header className="about-header">
+        <h1>Mentes Maestras Detrás de South Park</h1>
+        <p>
+          Conoce a los creadores de una de las comedias satíricas animadas más longevas e influyentes de la televisión contemporánea.
+        </p>
+      </header>
 
-      {/* SECCIÓN CREADORES */}
-      <section id="servicios" className="servicios">
-        <h2>Creadores de South Park</h2>
-        <div className="cards-container">
-          
-          {/* Trey Parker */}
-          <div className="card">
-            <img 
-              src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTwVQl6zjRYeEtqPairZrTtqUljziwBSfbu5Ewekkf4O61b75VF09-DZMerUN0QS-1gsXNY0NlcLMYfb2OIKBRwpRFS_Nb6QZkP0opAMy89ecldzsfLtWRv8MJSTTW0vzIcI2MsWrjMyiM&s=19" 
-              alt="Trey Parker" 
+      <section className="creadores-grid">
+        {creadores.map((creador) => (
+          <article key={creador.id} className="card-creador">
+            <img
+              src={creador.imagen}
+              alt={creador.nombre}
+              className="card-creador-img"
+              loading="lazy"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = '/EricCartman.png';
+              }}
             />
-            <h3>Trey Parker</h3>
-            <p>Trey Parker es un director, animador y guionista...</p>
-            <a 
-              href="https://es.wikipedia.org/wiki/Trey_Parker" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn-card"
+            <h3>{creador.nombre}</h3>
+            <span className="card-creador-role">{creador.rol}</span>
+            <p>{creador.descripcion}</p>
+            <a
+              href={creador.wikiUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-creador"
             >
-              Ver perfil
+              Ver biografía en Wikipedia
             </a>
-          </div>
-
-          {/* Matt Stone */}
-          <div className="card">
-            <img 
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQizYyjpIE6O_XNjaDaD12emWf_JDl9nn9sdqzM9_g&s=10" 
-              alt="Matt Stone" 
-              className="card-img" 
-            />
-            <h3>Matt Stone</h3>
-            <p>Actor, guionista y productor estadounidense, reconocido principalmente por ser el cocreador de la serie animada South Park y del musical The Book of Mormon</p>
-          </div>
-
-        </div>
+          </article>
+        ))}
       </section>
     </div>
   );
 };
+
+export default About;

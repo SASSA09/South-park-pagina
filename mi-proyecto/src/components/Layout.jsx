@@ -1,14 +1,23 @@
+import { Outlet } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+import '../styles/Layout.css';
 
-export const Layout = ({ children }) => {
+/**
+ * Componente Layout principal
+ * Actúa como contenedor esqueleto de la aplicación.
+ * Mantiene Navbar y Footer fijos y renderiza las rutas hijas mediante <Outlet />
+ */
+export const Layout = () => {
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className="app-layout">
       <Navbar />
-      <main className="container my-4 flex-grow-1">
-        {children}
+      <main className="main-content">
+        <Outlet />
       </main>
       <Footer />
     </div>
   );
 };
+
+export default Layout;
